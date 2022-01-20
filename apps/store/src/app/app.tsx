@@ -50,8 +50,8 @@ export const App = () => {
 
   return (
     <>
-      <Header />
-      <div className="container">
+      <Header title="Board Game Hoard" />
+      <div className="container" data-testid="app-container">
         <div className="games-layout">
           {state.loadingState === 'loading'
             ? 'Loading...'

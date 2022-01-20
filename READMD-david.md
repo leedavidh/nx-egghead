@@ -95,4 +95,11 @@ npx nx run store:serveAppAndApi
 ```
 npx nx dep-graph
 
+proxy.conf.json
+```
+
+### lesson 19
+
+```
+npx nx run store:test --watch
 ```
