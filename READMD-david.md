@@ -103,3 +103,21 @@ proxy.conf.json
 ```
 npx nx run store:test --watch
 ```
+
+### lesson 21 lint
+
+```
+    lint fix for Warning: React Hook useEffect has a missing dep 'state'
+        /*
+        setState({
+          ...state,
+          data: res,
+          loadingState: 'success',
+        });
+        */
+        setState((s) => ({
+          ...s,
+          data: res,
+          loadingState: 'success',
+        }));
+```
