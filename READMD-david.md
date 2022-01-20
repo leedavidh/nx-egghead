@@ -36,3 +36,16 @@ npm install @material-ui/core
 npx nx g @nrwl/react:lib ui-shared --directory=store --dry-run
 npx nx g @nrwl/react:component header --project=store-ui-shared
 ```
+
+## lesson 9
+
+```
+npx nx g @nrwl/workspace:lib util-formatters --directory=store --dry-run
+
+tsconfig.base.json
+    "paths": {
+      "@nx-egghead/store/ui-shared": ["libs/store/ui-shared/src/index.ts"],
+      "@nx-egghead/store/util-formatters": [
+        "libs/store/util-formatters/src/index.ts"
+      ]
+```
