@@ -41,13 +41,27 @@
       "executor": "@nrwl/web:dev-server",
       "options": {
         "buildTarget": "store:build",
-        "hmr": true
+        "hmr": true,
+        "proxyConfig": "apps/store/proxy.conf.json"
       },
       "configurations": {
         "production": {
           "buildTarget": "store:build:production",
           "hmr": false
         }
+      }
+    },
+    "serveAppAndApi": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "nx run api:serve"
+          },
+          {
+            "command": "nx run store:serve"
+          }
+        ]
       }
     },
     "lint": {

@@ -49,3 +49,43 @@ tsconfig.base.json
         "libs/store/util-formatters/src/index.ts"
       ]
 ```
+
+## lesson 11
+
+```
+npx nx g @nrwl/react:lib feature-game-detail --directory=store --appProject=store  --dry-run
+```
+
+## lesson 12
+
+```
+npm install -D @nrwl/express
+npx nx g @nrwl/express:application api --frontendProject=store --dry-run
+npx nx run api:serve
+
+http://localhost:3333/api/games
+http://localhost:4200/api/games
+
+npx nx run-many --target=serve --projects=api,store --parallel=true
+```
+
+### lesson 13
+
+```
+npx nx run store:serveAppAndApi
+
+-- see apps/store/project.json
+    "serveAppAndApi": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "nx run api:serve"
+          },
+          {
+            "command": "nx run store:serve"
+          }
+        ]
+      }
+    },
+```
