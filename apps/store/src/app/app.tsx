@@ -27,24 +27,43 @@ export const App = () => {
   });
 
   useEffect(() => {
+    /* lint warning fix
     setState({
       ...state,
       loadingState: 'loading',
     });
+    */
+    setState((s) => ({
+      ...s,
+      loadingState: 'loading',
+    }));
     fetch('/api/games')
       .then((x) => x.json())
       .then((res) => {
+        /*
         setState({
           ...state,
           data: res,
           loadingState: 'success',
         });
+        */
+        setState((s) => ({
+          ...s,
+          data: res,
+          loadingState: 'success',
+        }));
       })
       .catch((err) => {
+        setState((s) => ({
+          ...s,
+          loadingState: 'error',
+        }));
+        /*
         setState({
           ...state,
           loadingState: 'error',
         });
+        */
       });
   }, []);
 
