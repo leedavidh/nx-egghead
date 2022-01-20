@@ -89,3 +89,10 @@ npx nx run store:serveAppAndApi
       }
     },
 ```
+
+### lesson 14
+
+```
+npx nx dep-graph
+
+```
